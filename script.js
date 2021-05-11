@@ -22,8 +22,7 @@ function selectDigit() {
 
   if (operator == ``) {
     firstDigits = `${firstDigits}${this.innerHTML}`
-  }
-  else {
+  } else {
     secondDigits = `${secondDigits}${this.innerHTML}`
   }
 }
@@ -31,7 +30,7 @@ function selectDigit() {
 function selectOperator() {
   if (firstDigits != `` && operator == ``) {
     display.innerHTML = `${display.innerHTML} ${this.innerHTML} `
-    operator = this.innerHTML
+    operator = this.id
   }
 }
 
@@ -39,16 +38,13 @@ function selectEqual() {
   if (secondDigits != ``) {
     let answer
 
-    if (operator == `+`) {
+    if (operator == `add`) {
       answer = Number(firstDigits) + Number(secondDigits)
-    }
-    else if (operator == `-`) {
+    } else if (operator == `subtract`) {
       answer = Number(firstDigits) - Number(secondDigits)
-    }
-    else if (operator == `×`) {
+    } else if (operator == `multiply`) {
       answer = Number(firstDigits) * Number(secondDigits)
-    }
-    else if (operator == `÷`) {
+    } else if (operator == `divide`) {
       answer = Number(firstDigits) / Number(secondDigits)
     }
 
